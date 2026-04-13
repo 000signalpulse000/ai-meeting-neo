@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Meeting Neo UI</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <h1>AI Meeting Neo + AI Meeting Hub</h1>
+        <p class="subtitle">safe_mode 前提のローカル会議パイプライン + 複数AI合同作業ハブ</p>
+      </header>
+
+      <main class="grid">
+        <section class="card wide">
+          <h2>AI Meeting Hub</h2>
+          <div class="form-grid">
+            <div>
+              <label for="theme">テーマ</label>
+              <textarea id="theme"></textarea>
+            </div>
+            <div>
+              <label for="current">現状</label>
+              <textarea id="current"></textarea>
+            </div>
+            <div>
+              <label for="goal">ゴール</label>
+              <textarea id="goal"></textarea>
+            </div>
+            <div>
+              <label for="constraints">制約</label>
+              <textarea id="constraints"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="card wide">
+          <h2>各AIの回答</h2>
+          <div class="form-grid">
+            <div>
+              <label for="chatgpt">ChatGPT</label>
+              <textarea id="chatgpt"></textarea>
+            </div>
+            <div>
+              <label for="gemini">Gemini</label>
+              <textarea id="gemini"></textarea>
+            </div>
+            <div>
+              <label for="grok">Grok</label>
+              <textarea id="grok"></textarea>
+            </div>
+            <div>
+              <label for="cursor">Cursor</label>
+              <textarea id="cursor"></textarea>
+            </div>
+            <div>
+              <label for="openclaw">OpenClaw</label>
+              <textarea id="openclaw"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="card wide">
+          <h2>統合</h2>
+          <div class="form-grid single-column">
+            <div>
+              <label for="conclusion">結論</label>
+              <textarea id="conclusion"></textarea>
+            </div>
+            <div>
+              <label for="next-actions">次アクション</label>
+              <textarea id="next-actions"></textarea>
+            </div>
+          </div>
+          <div class="button-row top-space">
+            <button id="save-hub">Hub内容を保存</button>
+            <button id="clear-hub" class="secondary">Hub内容をクリア</button>
+          </div>
+          <p id="hub-status" class="status">未保存</p>
+        </section>
+
+        <section class="card">
+          <h2>操作</h2>
+          <div class="button-column">
+            <button id="run-auto">1. 計画 + dispatch</button>
+            <button id="run-summary">2. summary 生成</button>
+            <button id="run-chairperson">3. chairperson 生成</button>
+            <button id="refresh-status" class="secondary">状態を更新</button>
+          </div>
+          <p class="note">すべて safe_mode 前提で動作します。</p>
+        </section>
+
+        <section class="card">
+          <h2>現在の状態</h2>
+          <pre id="meeting-state" class="viewer">読み込み中...</pre>
+        </section>
+
+        <section class="card wide">
+          <h2>summary</h2>
+          <pre id="summary-view" class="viewer">読み込み中...</pre>
+        </section>
+
+        <section class="card wide">
+          <h2>decision</h2>
+          <pre id="decision-view" class="viewer">読み込み中...</pre>
+        </section>
+
+        <section class="card wide">
+          <h2>実行ログ</h2>
+          <pre id="run-log" class="viewer">まだ実行していません。</pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
